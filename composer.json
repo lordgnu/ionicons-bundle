@@ -28,5 +28,6 @@
     },
     "config": {
         "bin-dir": "bin"
-    }
+    },
+    "target-dir": "NeoNexus/Bundle/IoniconsBundle"
 }
