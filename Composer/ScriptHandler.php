@@ -1,6 +1,6 @@
 <?php
 
-namespace Codingfogey\Bundle\FontAwesomeBundle\Composer;
+namespace NeoNexus\Bundle\IoniconsBundle\Composer;
 
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\PhpExecutableFinder;
@@ -29,7 +29,7 @@ class ScriptHandler
             return;
         }
 
-        static::executeCommand($event, $appDir, 'codingfogey:fontawesome:install', $options['process-timeout']);
+        static::executeCommand($event, $appDir, 'neonexus:ionicons:install', $options['process-timeout']);
     }
 
     protected static function executeCommand(CommandEvent $event, $appDir, $cmd, $timeout = 300)

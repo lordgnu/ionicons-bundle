@@ -1,6 +1,6 @@
 <?php
 
-namespace Codingfogey\Bundle\FontAwesomeBundle\DependencyInjection;
+namespace NeoNexus\Bundle\IoniconsBundle\DependencyInjection;
 
 /**
  * Description of AsseticConfiguration
@@ -20,13 +20,13 @@ class AsseticConfiguration
 
         switch ($config['filter']) {
             case 'none' :
-                $output['fontawesome_css'] = $this->copyCss($config);
+                $output['ionicons_css'] = $this->copyCss($config);
                 break;
             case 'less' :
-                $output['fontawesome_css'] = $this->buildWithLess($config);
+                $output['ionicons_css'] = $this->buildWithLess($config);
                 break;
             case 'sass' :
-                $output['fontawesome_css'] = $this->buildWithSass($config);
+                $output['ionicons_css'] = $this->buildWithSass($config);
                 break;
         }
 
@@ -35,50 +35,50 @@ class AsseticConfiguration
 
     protected function copyCss(array $config)
     {
-        $inputs[] = $config['assets_dir'] . '/css/font-awesome.css';
+        $inputs[] = $config['assets_dir'] . '/css/ionicons.css';
 
         return array(
             'inputs' => $inputs,
             'filters' => array(),
-            'output' => $config['output_dir'] . 'css/fontawesome.css'
+            'output' => $config['output_dir'] . 'css/ionicons.css'
         );
     }
 
     protected function buildWithLess(array $config)
     {
-        $fontawesomeFile = $config['assets_dir'] . '/less/font-awesome.less';
+        $ioniconsFile = $config['assets_dir'] . '/less/ionicons.less';
         if (true === isset($config['customize']['variables_file']) &&
             null !== $config['customize']['variables_file']) {
-            $fontawesomeFile = $config['customize']['font_awesome_output'];
+            $ioniconsFile = $config['customize']['ionicons_output'];
         }
 
         $inputs = array(
-            $fontawesomeFile,
+            $ioniconsFile,
         );
 
         return array(
             'inputs' => $inputs,
             'filters' => array($config['filter']),
-            'output' => $config['output_dir'] . 'css/fontawesome.css'
+            'output' => $config['output_dir'] . 'css/ionicons.css'
         );
     }
 
     protected function buildWithSass(array $config)
     {
-        $fontawesomeFile = $config['assets_dir'] . '/scss/font-awesome.scss';
+        $ioniconsFile = $config['assets_dir'] . '/scss/ionicons.scss';
         if (true === isset($config['customize']['variables_file']) &&
             null !== $config['customize']['variables_file']) {
-            $fontawesomeFile = $config['customize']['font_awesome_output'];
+            $ioniconsFile = $config['customize']['ionicons_output'];
         }
 
         $inputs = array(
-            $fontawesomeFile,
+            $ioniconsFile,
         );
 
         return array(
             'inputs' => $inputs,
             'filters' => array($config['filter']),
-            'output' => $config['output_dir'] . 'css/fontawesome.css'
+            'output' => $config['output_dir'] . 'css/ionicons.css'
         );
     }
 }

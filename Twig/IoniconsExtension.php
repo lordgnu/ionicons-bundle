@@ -1,11 +1,11 @@
 <?php
 
-namespace Codingfogey\Bundle\FontAwesomeBundle\Twig;
+namespace NeoNexus\Bundle\IoniconsBundle\Twig;
 
 use Twig_Extension;
 use Twig_Function_Method;
 
-class FontAwesomeExtension extends Twig_Extension
+class IoniconsExtension extends Twig_Extension
 {
     private $allowedOptions = array(
         'icon' => 'fa-%s',
@@ -120,6 +120,6 @@ class FontAwesomeExtension extends Twig_Extension
      */
     public function getName()
     {
-        return 'codingfogey_font_awesome';
+        return 'neonexus_ionicons';
     }
 }

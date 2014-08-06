@@ -1,6 +1,6 @@
 <?php
 
-namespace Codingfogey\Bundle\FontAwesomeBundle\DependencyInjection;
+namespace NeoNexus\Bundle\IoniconsBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -13,7 +13,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class CodingfogeyFontAwesomeExtension extends Extension implements PrependExtensionInterface
+class NeoNexusIoniconsExtension extends Extension implements PrependExtensionInterface
 {
 
     /**
@@ -28,11 +28,11 @@ class CodingfogeyFontAwesomeExtension extends Extension implements PrependExtens
         $loader->load('services.yml');
 
         if (true === isset($config['customize'])) {
-            $container->setParameter('codingfogey_font_awesome.customize', $config['customize']);
+            $container->setParameter('neonexus_ionicons.customize', $config['customize']);
         }
-        $container->setParameter('codingfogey_font_awesome.output_dir', $config['output_dir']);
-        $container->setParameter('codingfogey_font_awesome.assets_dir', $config['assets_dir']);
-        $container->setParameter('codingfogey_font_awesome.filter', $config['filter']);
+        $container->setParameter('neonexus_ionicons.output_dir', $config['output_dir']);
+        $container->setParameter('neonexus_ionicons.assets_dir', $config['assets_dir']);
+        $container->setParameter('neonexus_ionicons.filter', $config['filter']);
     }
 
     public function prepend(ContainerBuilder $container)

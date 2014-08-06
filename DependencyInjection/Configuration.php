@@ -1,6 +1,6 @@
 <?php
 
-namespace Codingfogey\Bundle\FontAwesomeBundle\DependencyInjection;
+namespace NeoNexus\Bundle\IoniconsBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -19,7 +19,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('codingfogey_font_awesome');
+        $rootNode = $treeBuilder->root('neonexus_ionicons');
 
         $rootNode
             ->children()
@@ -27,7 +27,7 @@ class Configuration implements ConfigurationInterface
                     ->defaultValue('')
                 ->end()
                 ->scalarNode('assets_dir')
-                    ->defaultValue('%kernel.root_dir%/../vendor/fortawesome/font-awesome')
+                    ->defaultValue('%kernel.root_dir%/../vendor/driftyco/ionicons')
                 ->end()
                 ->scalarNode('filter')
                     ->defaultValue('less')
@@ -42,7 +42,7 @@ class Configuration implements ConfigurationInterface
                         ->scalarNode('variables_file')
 //                            ->defaultValue('%kernel.root_dir%/Resources/fontawesome/variables.less')
                         ->end()
-                        ->scalarNode('font_awesome_output')
+                        ->scalarNode('ionicons_output')
 //                            ->defaultValue('%kernel.root_dir%/Resources/less/fontawesome.less')
                         ->end()
                     ->end()

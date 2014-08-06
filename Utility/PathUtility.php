@@ -1,6 +1,6 @@
 <?php
 
-namespace Codingfogey\Bundle\FontAwesomeBundle\Utility;
+namespace NeoNexus\Bundle\IoniconsBundle\Utility;
 
 class PathUtility
 {

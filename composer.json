@@ -1,25 +1,25 @@
 {
-    "name": "codingfogey/fontawesome-bundle",
-    "description": "Easy integration of Font Awesome into Symfony2 projects.",
+    "name": "neonexus/ionicons-bundle",
+    "description": "Easy integration of Ionicons into Symfony2 projects (based on similar package by Coding Fogey).",
     "type": "symfony-bundle",
     "license": "MIT",
     "authors": [
         {
-            "name": "Andreas Ernst",
-            "email": "codingfogey@gmail.com"
+            "name": "NeoNexus DeMortis",
+            "homepage": "https://github.com/neonexus"
         }
     ],
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.3",
-        "symfony/symfony": ">=2.3"
+        "symfony/symfony": ">=2.3",
+        "driftyco/ionicons": ">=1.5"
     },
     "require-dev": {
         "phpunit/phpunit": "4.1.*",
         "psy/psysh": "dev-master"
     },
     "suggest": {
-        "fortawesome/font-awesome": "The iconic font designed for Bootstrap",
         "twbs/bootstrap": "Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.",
         "braincrafted/bootstrap-bundle": "BraincraftedBootstrapBundle integrates Bootstrap into Symfony2 by providing templates, Twig extensions, services and commands."
     },
@@ -28,6 +28,5 @@
     },
     "config": {
         "bin-dir": "bin"
-    },
-    "target-dir": "Codingfogey/Bundle/FontAwesomeBundle"
+    }
 }

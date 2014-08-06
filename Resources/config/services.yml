@@ -1,8 +1,8 @@
 parameters:
-    codingfogey_font_awesome.twig.extension.class: Codingfogey\Bundle\FontAwesomeBundle\Twig\FontAwesomeExtension
+    neonexus_ionicons.twig.extension.class: NeoNexus\Bundle\IoniconsBundle\Twig\IoniconsExtension
 
 services:
-    codingfogey_font_awesome.twig.extension:
-        class: %codingfogey_font_awesome.twig.extension.class%
+    neonexus_ionicons.twig.extension:
+        class: %neonexus_ionicons.twig.extension.class%
         tags:
             - { name: twig.extension }

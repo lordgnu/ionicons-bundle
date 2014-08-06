@@ -1,8 +1,8 @@
 <?php
 
-namespace Codingfogey\Bundle\FontAwesomeBundle\Command;
+namespace NeoNexus\Bundle\IoniconsBundle\Command;
 
-use Codingfogey\Bundle\FontAwesomeBundle\Utility\PathUtility;
+use NeoNexus\Bundle\IoniconsBundle\Utility\PathUtility;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -31,8 +31,8 @@ class GenerateCommand extends ContainerAwareCommand
     protected function configure()
     {
         $this
-            ->setName('codingfogey:fontawesome:generate')
-            ->setDescription('Generates a custom fontawesome file')
+            ->setName('neonexus:ionicons:generate')
+            ->setDescription('Generates a custom ionicons file')
         ;
     }
 
@@ -41,9 +41,9 @@ class GenerateCommand extends ContainerAwareCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $config = $this->getContainer()->getParameter('codingfogey_font_awesome.customize');
+        $config = $this->getContainer()->getParameter('neonexus_ionicons.customize');
 
-        $filter = $this->getContainer()->getParameter('codingfogey_font_awesome.filter');
+        $filter = $this->getContainer()->getParameter('neonexus_ionicons.filter');
 
         if ("sass" === $filter && "_" !== substr(basename($config['variables_file']), 0, 1)) {
             $output->writeln('<error>The variables file name must start with an `_`.</error>');
@@ -57,25 +57,25 @@ class GenerateCommand extends ContainerAwareCommand
             return;
         }
 
-        if (!is_dir(dirname($config['font_awesome_output']))) {
+        if (!is_dir(dirname($config['ionicons_output']))) {
             $output->writeln('<comment>Cannot find target directory. Creating...</comment>');
-            mkdir(dirname($config['font_awesome_output']));
-            $output->writeln(sprintf('Created directory <info>%s</info>', dirname($config['font_awesome_output'])));
+            mkdir(dirname($config['ionicons_output']));
+            $output->writeln(sprintf('Created directory <info>%s</info>', dirname($config['ionicons_output'])));
         }
 
         $output->writeln('<comment>Found custom variables file. Generating...</comment>');
         $this->executeGenerateFontAwesome($config, $filter);
-        $output->writeln(sprintf('Saved to <info>%s</info>', $config['font_awesome_output']));
+        $output->writeln(sprintf('Saved to <info>%s</info>', $config['ionicons_output']));
     }
 
     protected function executeGenerateFontAwesome(array $config, $filter)
     {
         $assetsDir    = $this->pathUtility->getRelativePath(
-            dirname($config['font_awesome_output']),
-            $this->getContainer()->getParameter('codingfogey_font_awesome.assets_dir')
+            dirname($config['ionicons_output']),
+            $this->getContainer()->getParameter('neonexus_ionicons.assets_dir')
         );
         $variablesDir = $this->pathUtility->getRelativePath(
-            dirname($config['font_awesome_output']),
+            dirname($config['ionicons_output']),
             dirname($config['variables_file'])
         );
 
@@ -94,7 +94,7 @@ class GenerateCommand extends ContainerAwareCommand
             ltrim(basename($config['variables_file'], ".{$ext}"), "_")
         );
 
-        $templateFile = sprintf('CodingfogeyFontAwesomeBundle:FontAwesome:fontawesome.%s.twig', $ext);
+        $templateFile = sprintf('NeoNexusIoniconsBundle:Ionicons:ionicons.%s.twig', $ext);
 
         $content = $this->getContainer()->get('twig')->render(
             $templateFile, array(
@@ -103,6 +103,6 @@ class GenerateCommand extends ContainerAwareCommand
             )
         );
 
-        file_put_contents($config['font_awesome_output'], $content);
+        file_put_contents($config['ionicons_output'], $content);
     }
 }

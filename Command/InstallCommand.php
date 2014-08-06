@@ -1,6 +1,6 @@
 <?php
 
-namespace Codingfogey\Bundle\FontAwesomeBundle\Command;
+namespace NeoNexus\Bundle\IoniconsBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
@@ -21,7 +21,7 @@ class InstallCommand extends ContainerAwareCommand
     protected function configure()
     {
         $this
-            ->setName('codingfogey:fontawesome:install')
+            ->setName('neonexus:ionicons:install')
             ->setDescription('Installs the icon font');
     }
 
@@ -56,7 +56,7 @@ class InstallCommand extends ContainerAwareCommand
             }
         }
 
-        $output->writeln(sprintf('Copied Font Awesome fonts to <comment>%s</comment>.', $destDir));
+        $output->writeln(sprintf('Copied Ionicons fonts to <comment>%s</comment>.', $destDir));
     }
 
     /**
@@ -66,7 +66,7 @@ class InstallCommand extends ContainerAwareCommand
     {
         return sprintf(
             '%s/fonts',
-            $this->getContainer()->getParameter('codingfogey_font_awesome.assets_dir')
+            $this->getContainer()->getParameter('neonexus_ionicons.assets_dir')
         );
     }
 
