@@ -1,6 +1,6 @@
 <?php
 
-namespace NeoNexus\Bundle\IoniconsBundle\DependencyInjection;
+namespace NeoNexus\Ionicons\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -13,7 +13,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class NeonexusIoniconsExtension extends Extension implements PrependExtensionInterface
+class IoniconsExtension extends Extension implements PrependExtensionInterface
 {
 
     /**
@@ -28,11 +28,11 @@ class NeonexusIoniconsExtension extends Extension implements PrependExtensionInt
         $loader->load('services.yml');
 
         if (true === isset($config['customize'])) {
-            $container->setParameter('neonexus_ionicons.customize', $config['customize']);
+            $container->setParameter('ionicons.customize', $config['customize']);
         }
-        $container->setParameter('neonexus_ionicons.output_dir', $config['output_dir']);
-        $container->setParameter('neonexus_ionicons.assets_dir', $config['assets_dir']);
-        $container->setParameter('neonexus_ionicons.filter', $config['filter']);
+        $container->setParameter('ionicons.output_dir', $config['output_dir']);
+        $container->setParameter('ionicons.assets_dir', $config['assets_dir']);
+        $container->setParameter('ionicons.filter', $config['filter']);
     }
 
     public function prepend(ContainerBuilder $container)

@@ -1,6 +1,6 @@
 <?php
 
-namespace NeoNexus\Bundle\IoniconsBundle\DependencyInjection;
+namespace NeoNexus\Ionicons\DependencyInjection;
 
 /**
  * Description of AsseticConfiguration

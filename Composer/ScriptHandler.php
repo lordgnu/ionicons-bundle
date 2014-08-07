@@ -1,6 +1,6 @@
 <?php
 
-namespace NeoNexus\Bundle\IoniconsBundle\Composer;
+namespace NeoNexus\Ionicons\Composer;
 
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\PhpExecutableFinder;

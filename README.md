@@ -31,14 +31,14 @@ This Bundle makes it easy to integrate [Ionicons](https://github.com/driftyco/io
             ...
         }
 
-2. Add `NeoNexusIoniconsBundle` to your `AppKernel.php`:
+2. Add `IoniconsBundle` to your `AppKernel.php`:
 
         ...
         public function registerBundles()
         {
             $bundles = array(
                 ...
-                new NeoNexus\Bundle\IoniconsBundle\NeoNexusIoniconsBundle()
+                new NeoNexus\Ionicons\IoniconsBundle()
             );
             ...
         }
@@ -53,7 +53,7 @@ NOTICE Installing Ionicons via composer is optional but makes this bundle work o
 
 If you did not install Ionicons via composer you have to configure the path to your installation:
 
-    neonexus_ionicons:
+    ionicons:
         assets_dir: %kernel.root_dir%/../vendor/driftyco/ionicons
 
 
@@ -61,7 +61,7 @@ If you did not install Ionicons via composer you have to configure the path to y
 
 If you want to customize Ionicons you have to put a customized variables file somewhere in your project and configure the path. You also have to set the output path.
 
-    neonexus_ionicons:
+    ionicons:
         filter: less
         customize:
             variables_file:         %kernel.root_dir%/Resources/ionicons/variables.less
@@ -88,11 +88,11 @@ There is also a `ScriptHandler` for conveniently doing this automatically on eac
     "scripts": {
         "post-install-cmd": [
             ...
-            "NeoNexus\\Bundle\\IoniconsBundle\\Composer\\ScriptHandler::install"
+            "NeoNexus\\Ionicons\\Composer\\ScriptHandler::install"
         ],
         "post-update-cmd": [
             ...
-            "NeoNexus\\Bundle\\IoniconsBundle\\Composer\\ScriptHandler::install"
+            "NeoNexus\\Ionicons\\Composer\\ScriptHandler::install"
         ]
     },
     ...
@@ -146,4 +146,4 @@ or `JSON` for more customization. The complete set of options is as follows:
 
 ## Acknowledgment
 
-- This bundle is forked from, and inspired by the [Font Awesome Bundle](https://github.com/codingfogey/fontawesome-bundle). Thanks [Andreas Ernst](https://github.com/codingfogey) (aka Coding Fogey).
+- This bundle is forked from, and inspired by the [Font Awesome Bundle](https://github.com/codingfogey/fontawesome-bundle). Thanks [Andreas Ernst](https://github.com/codingfogey)!

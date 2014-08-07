@@ -1,6 +1,6 @@
 <?php
 
-namespace NeoNexus\Bundle\IoniconsBundle\Command;
+namespace NeoNexus\Ionicons\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;

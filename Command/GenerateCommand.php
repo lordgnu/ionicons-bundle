@@ -1,6 +1,6 @@
 <?php
 
-namespace NeoNexus\Bundle\IoniconsBundle\Command;
+namespace NeoNexus\Ionicons\Command;
 
 use NeoNexus\Bundle\IoniconsBundle\Utility\PathUtility;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
@@ -41,9 +41,9 @@ class GenerateCommand extends ContainerAwareCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $config = $this->getContainer()->getParameter('neonexus_ionicons.customize');
+        $config = $this->getContainer()->getParameter('ionicons.customize');
 
-        $filter = $this->getContainer()->getParameter('neonexus_ionicons.filter');
+        $filter = $this->getContainer()->getParameter('ionicons.filter');
 
         if ("sass" === $filter && "_" !== substr(basename($config['variables_file']), 0, 1)) {
             $output->writeln('<error>The variables file name must start with an `_`.</error>');
@@ -72,7 +72,7 @@ class GenerateCommand extends ContainerAwareCommand
     {
         $assetsDir    = $this->pathUtility->getRelativePath(
             dirname($config['ionicons_output']),
-            $this->getContainer()->getParameter('neonexus_ionicons.assets_dir')
+            $this->getContainer()->getParameter('ionicons.assets_dir')
         );
         $variablesDir = $this->pathUtility->getRelativePath(
             dirname($config['ionicons_output']),
@@ -94,7 +94,7 @@ class GenerateCommand extends ContainerAwareCommand
             ltrim(basename($config['variables_file'], ".{$ext}"), "_")
         );
 
-        $templateFile = sprintf('NeoNexusIoniconsBundle:Ionicons:ionicons.%s.twig', $ext);
+        $templateFile = sprintf('IoniconsBundle:Ionicons:ionicons.%s.twig', $ext);
 
         $content = $this->getContainer()->get('twig')->render(
             $templateFile, array(

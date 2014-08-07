@@ -1,5 +1,5 @@
 parameters:
-    neonexus_ionicons.twig.extension.class: NeoNexus\Bundle\IoniconsBundle\Twig\IoniconsExtension
+    neonexus_ionicons.twig.extension.class: NeoNexus\Ionicons\Twig\IoniconsExtension
 
 services:
     neonexus_ionicons.twig.extension:

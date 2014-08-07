@@ -1,6 +1,6 @@
 <?php
 
-namespace NeoNexus\Bundle\IoniconsBundle\Twig;
+namespace NeoNexus\Ionicons\Twig;
 
 use Twig_Extension;
 use Twig_Function_Method;

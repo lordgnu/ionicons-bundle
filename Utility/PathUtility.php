@@ -1,6 +1,6 @@
 <?php
 
-namespace NeoNexus\Bundle\IoniconsBundle\Utility;
+namespace NeoNexus\Ionicons\Utility;
 
 class PathUtility
 {
