@@ -9,6 +9,9 @@
             "homepage": "https://github.com/neonexus"
         }
     ],
+    "support": {
+        "issues": "https://github.com/neonexus/ionicons-bundle/issues"
+    },
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.3",
@@ -24,10 +27,9 @@
         "braincrafted/bootstrap-bundle": "BraincraftedBootstrapBundle integrates Bootstrap into Symfony2 by providing templates, Twig extensions, services and commands."
     },
     "autoload": {
-        "psr-0": { "NeoNexus\\Ionicons": "" }
+        "psr-4": { "NeoNexus\\Ionicons\\": "src/" }
     },
     "config": {
         "bin-dir": "bin"
-    },
-    "target-dir": "NeoNexus/Ionicons"
+    }
 }
