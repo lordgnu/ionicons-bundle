@@ -66,7 +66,7 @@ class InstallCommand extends ContainerAwareCommand
     {
         return sprintf(
             '%s/fonts',
-            $this->getContainer()->getParameter('neonexus_ionicons.assets_dir')
+            $this->getContainer()->getParameter('ionicons.assets_dir')
         );
     }
 
