@@ -27,7 +27,7 @@
         "braincrafted/bootstrap-bundle": "BraincraftedBootstrapBundle integrates Bootstrap into Symfony2 by providing templates, Twig extensions, services and commands."
     },
     "autoload": {
-        "psr-4": { "NeoNexus\\Ionicons\\": "src/" }
+        "psr-4": { "NeoNexus\\Ionicons\\": "" }
     },
     "config": {
         "bin-dir": "bin"

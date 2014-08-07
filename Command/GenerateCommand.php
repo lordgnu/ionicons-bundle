@@ -2,7 +2,7 @@
 
 namespace NeoNexus\Ionicons\Command;
 
-use NeoNexus\Bundle\IoniconsBundle\Utility\PathUtility;
+use NeoNexus\Ionicons\Utility\PathUtility;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
